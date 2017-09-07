@@ -16,7 +16,7 @@ function addToCart(itemName) {
 
  console.log(`${itemName} has been added to your cart.`)
 
- cart.push(newItem)
+ cart.unshift(newItem)
 
 
  return (cart)

@@ -15,7 +15,6 @@ function addToCart(itemName) {
  var newItem={[itemName]:itemPrice}
  console.log(`${itemName} has been added to your cart.`)
  cart.push(newItem)
- return(cart)
 
 }
 

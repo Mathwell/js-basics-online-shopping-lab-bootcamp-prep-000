@@ -9,21 +9,80 @@ function setCart(c) {
   return cart;
 }
 
-function addToCart(item) {
+function addToCart(itemName) {
  // write your code here
+ var itemPrice=Math.random()*(100-1)+1
+ var newItem={[itemName]:itemPrice}
+ console.log(`${itemName} has been added to your cart.`)
+ cart.push(newItem)
+ return(cart)
+
 }
 
 function viewCart() {
   // write your code here
+  if (cart.length===0) {
+    var string='Your shopping cart is empty.'
+    console.log(string)
+    return (string)
+  } else{
+      var firstItem=cart[0]
+      var itemName=Object.keys(firstItem)
+      var firstItemName=itemName.shift()
+      var firstPrice=firstItem[firstItemName]
+       var string=`In your cart, you have ${firstItemName} at $${firstPrice}`
+       for (var i=1; i<cart.length; i++){
+         if (cart.length>2){
+           string=string+','
+         }
+         if (i===cart.length-1){
+           string=string+" and"
+         }
+
+         var currentItem=cart[i]
+         var itemName=Object.keys(currentItem)
+         var currentItemName=itemName.shift()
+         var price=currentItem[currentItemName]
+        var string= string+` ${currentItemName} at $${price}`
+
+       }
+       string=string+"."
+       console.log(string)
+       return(string)
+      }
 }
 
 function total() {
   // write your code here
+  var cartTotal=0
+for (var i=0; i<cart.length; i++){
+  var currentItem=cart[i]
+  var itemName=Object.keys(currentItem)
+  var currentItemName=itemName.shift()
+  var price=currentItem[currentItemName]
+  cartTotal=cartTotal+price
+}
+  return(cartTotal)
 }
 
 function removeFromCart(item) {
   // write your code here
+  var itemFound=false
+  var i=0
+  while (i<cart.length && !itemFound){
+    var currentItem=cart[i]
+    var itemName=Object.keys(currentItem)
+    var currentItemName=itemName.shift()
+    var price=currentItem[currentItemName]
+    if (item===currentItemName){
+       itemFound=true
+       cart.slise
+    }
+    i++
+  }
+    return(item)
 }
+
 
 function placeOrder(cardNumber) {
   // write your code here

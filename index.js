@@ -15,7 +15,10 @@ function addToCart(itemName) {
  var newItem=new Object()
  newItem={ [itemName]:itemPrice }
  console.log(`${itemName} has been added to your cart.`)
- cart=[...cart, newItem]
+ if (cart===undefined){ cart[0]=[newItem]} else{
+ cart.push(newItem)   
+ }
+ 
  return (cart)
 }
 

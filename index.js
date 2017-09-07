@@ -76,7 +76,7 @@ function removeFromCart(item) {
     var price=currentItem[currentItemName]
     if (item===currentItemName){
        itemFound=true
-       cart=[...cart.slice(1,i),...cart.slice(i+1)]
+       cart=[...cart.slice(0,i),...cart.slice(i+1)]
     }
     i++
   }
